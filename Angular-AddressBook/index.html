@@ -18,19 +18,19 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">AddressBook</a>
+				<a class="navbar-brand" href="#/">AddressBook</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Contacts <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Lister</a></li>
-							<li><a href="#">Ajouter</a></li>
+							<li><a href="#/">Lister</a></li>
+							<li><a href="#/ajouter">Ajouter</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -38,36 +38,15 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-	<div class="container" ng-controller="ContactListCtrl">
-		<table class="table">
-	  		<tr>
-	  			<th>#</th>
-	  			<th>Prénom</th>
-	  			<th>Nom</th>
-	  			<th>Actions</th>
-	  		</tr>
-	  		<tr ng-repeat="contact in contacts track by $index">
-	  			<td>{{contact.id}}</td>
-	  			<td>{{contact.prenom}}</td>
-	  			<td>{{contact.nom}}</td>
-	  			<td>
-	  				<a href="#" class="btn btn-primary btn-xs">
-	  					<span class="glyphicon glyphicon-search"></span>
-	  				</a>
-	  				<a href="#" class="btn btn-warning btn-xs">
-	  					<span class="glyphicon glyphicon-pencil"></span>
-	  				</a>
-	  				<a href="#" class="btn btn-danger btn-xs">
-	  					<span class="glyphicon glyphicon-trash"></span>
-	  				</a>
-	  			</td>
-	  		</tr>
-		</table>
+	<div class="container" ng-view>
+
 	</div>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="app/controllers/contact-list.js"></script>
+	<script src="app/controllers/contact-add.js"></script>
 	<script src="app/app.js"></script>
 </body>
 </html>
