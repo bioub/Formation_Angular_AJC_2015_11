@@ -5,5 +5,6 @@
 
 ## Démarrage du serveur
 
-`cd ServeurREST`
-`json-server --watch db.json`
+    cd ServeurREST
+    json-server --watch db.json
+
