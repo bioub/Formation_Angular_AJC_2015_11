@@ -1,6 +1,7 @@
 
 angular.module('app', [
     'ngRoute',
+    'app.controller.contact.add',
     'app.controller.contact.list'
 ])
     .config(['$routeProvider', function($routeProvider) {

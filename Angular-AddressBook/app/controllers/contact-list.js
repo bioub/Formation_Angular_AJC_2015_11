@@ -1,17 +1,25 @@
+angular.module('app.controller.contact.list', [
+    'app.service.contact',
+    'ui.bootstrap'
+])
+    .controller('ContactListCtrl', ['$scope', 'Contact', '$uibModal',
+        function ($scope, Contact, $uibModal) {
 
 
-angular.module('app.controller.contact.add', [])
-       .controller('ContactAddCtrl', ['$scope', '$http', function($scope, $http) {
+        $scope.contacts = Contact.query();
 
-    	   //$http({
-    		//   method: 'GET',
-    		//   url: 'http://localhost:3000/contacts'
-    		// }).then(function successCallback(response) {
-    		//     $scope.contacts = response.data;
-    		//   }, function errorCallback(response) {
-    		//     // called asynchronously if an error occurs
-    		//     // or server returns response with an error status.
-    		//	   console.log("Problème de serveur");
-    		//   });
-    	   
-       }]);
+        $scope.supprimer = function(i) {
+
+            // TODO Ne pas utiliser confirm (bloquant)
+            var result = confirm('Êtes-vous sûr de vouloir supprimer ce contact ?');
+
+            if (result) {
+                $scope.contacts[i].$delete(function() {
+                    $scope.contacts.splice(i, 1);
+                });
+            }
+        };
+
+
+    }]);
+

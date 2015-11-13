@@ -1,19 +1,19 @@
-<form>
+<form ng-submit="ajouter()">
     <div class="form-group">
         <label>Prénom</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" ng-model="newContact.prenom">
     </div>
     <div class="form-group">
         <label>Nom</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" ng-model="newContact.nom">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" class="form-control">
+        <input type="email" class="form-control" ng-model="newContact.email">
     </div>
     <div class="form-group">
         <label>Téléphone</label>
-        <input type="tel" class="form-control">
+        <input type="tel" class="form-control" ng-model="newContact.telephone">
     </div>
     <button type="submit" class="btn btn-default">Ajouter</button>
 </form>
